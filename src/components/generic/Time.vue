@@ -12,8 +12,14 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import { times } from "../../constants";
 
 export default {
+  data() {
+    return {
+      times,
+    };
+  },
   components: {},
   props: {
     currentProps: {},

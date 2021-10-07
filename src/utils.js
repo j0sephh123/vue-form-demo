@@ -1,3 +1,5 @@
+import { steps } from "./store/state";
+
 export const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
 export const validatePhone = (phone) =>
@@ -15,5 +17,19 @@ export const validators = {
   tickets: (value) => validateNum(+value, 1, 20),
   name: (value) => validateLength(value, 2, 255),
   phone: (value) => validatePhone(value),
-  email: (value) => validatePhone(value),
+  email: (value) => validateEmail(value),
+};
+
+export const validator = (state) => {
+  const { items } = steps[state.step];
+
+  return items.reduce((acc, item) => {
+    const isValid = validators[item](state.details[item]);
+
+    if (!isValid) {
+      return [...acc, item];
+    }
+
+    return acc;
+  }, []);
 };

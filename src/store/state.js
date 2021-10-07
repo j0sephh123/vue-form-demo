@@ -1,5 +1,4 @@
 import { markRaw } from "vue";
-import { validationStates } from "../constants";
 import MoviesList from "../components/generic/MoviesList.vue";
 import Datepicker from "../components/generic/Datepicker.vue";
 import Time from "../components/generic/Time.vue";
@@ -47,16 +46,16 @@ export const fields = {
   movie: {
     selected: false,
     label: "Pick a movie",
-    validityState: validationStates.neutral,
+    valid: true,
     errorText: "Please select a movie",
   },
   time: {
     label: "Pick a time",
-    validityState: validationStates.neutral,
+    valid: true,
     errorText: "Please select a time",
   },
   date: {
-    validityState: validationStates.neutral,
+    valid: true,
     errorText: "Please enter a valid a date",
     label: "Date and time",
   },
@@ -66,7 +65,7 @@ export const fields = {
     errorText: "Invalid number of tickets",
     helperText: "Pick between 1 and 20",
     label: "Number of tickets",
-    validityState: validationStates.neutral,
+    valid: true,
   },
   name: {
     id: "name",
@@ -74,7 +73,7 @@ export const fields = {
     errorText: "Invalid name length",
     helperText: "Name must be between 2 and 255 characters",
     label: "Name",
-    validityState: validationStates.neutral,
+    valid: true,
   },
   phone: {
     id: "phone",
@@ -83,7 +82,7 @@ export const fields = {
     helperText:
       "We support only bulgarian numbers like 0889123456 or +359889123456",
     label: "Phone",
-    validityState: validationStates.neutral,
+    valid: true,
   },
   email: {
     id: "email",
@@ -91,7 +90,7 @@ export const fields = {
     errorText: "Please enter a valid email",
     helperText: "We will not share your email with anyone else",
     label: "Email",
-    validityState: validationStates.neutral,
+    valid: true,
   },
   summary: {
     label: "Summary",

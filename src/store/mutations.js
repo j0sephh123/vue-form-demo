@@ -1,25 +1,4 @@
-import {
-  validationStates,
-  nameMax,
-  nameMin,
-  ticketsMax,
-  ticketsMin,
-} from "../constants";
-import {
-  validateEmail,
-  validatePhone,
-  validateLength,
-  validateNum,
-} from "../utils";
-
-import { steps } from "./state";
-import { validators } from "../utils";
-
-const validator = (state) => {
-  const { items } = steps[state.step];
-
-  return items.every((item) => validators[item](state.details[item]));
-};
+import { validator } from "../utils";
 
 export const mutations = {
   updateDate(state, payload) {
@@ -35,18 +14,14 @@ export const mutations = {
     state.step -= 1;
   },
   next(state) {
-    if (validator(state)) {
+    const invalidFields = validator(state);
+
+    if (invalidFields.length === 0) {
       state.step += 1;
+    } else {
+      invalidFields.forEach((field) => {
+        console.log(field);
+      });
     }
-    
-    
-    console.log("invalid");
-    
-
-      
-
-     
-
-    
   },
 };

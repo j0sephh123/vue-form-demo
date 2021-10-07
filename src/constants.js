@@ -1,8 +1,3 @@
-export const validationStates = {
-  neutral: "neutral",
-  invalid: "invalid",
-};
-
 export const moviesMap = {
   "Lord of the Rings": "Lord of the Rings",
   "Star Wars": "Star Wars",
@@ -15,15 +10,17 @@ export const nameMax = 255;
 export const ticketsMin = 1;
 export const ticketsMax = 20;
 
-export const availableTimes = {
-  0: ["14:00", "18:00", "22:30"],
-  1: ["10:30", "14:30", "18:30"],
-  2: ["11:30", "15:30", "19:30"],
-  3: ["12:00", "16:00", "20:00"],
-  4: ["12:30", "16:30", "20:30"],
-  5: ["10:40", "14:40", "18:40"],
-  6: ["13:00", "17:00", "21:00"],
-};
+export const times = ["14:00", "18:00", "22:30"];
+
+// export const availableTimes = {
+//   0: ["14:00", "18:00", "22:30"],
+//   1: ["10:30", "14:30", "18:30"],
+//   2: ["11:30", "15:30", "19:30"],
+//   3: ["12:00", "16:00", "20:00"],
+//   4: ["12:30", "16:30", "20:30"],
+//   5: ["10:40", "14:40", "18:40"],
+//   6: ["13:00", "17:00", "21:00"],
+// };
 
 // export const availableTimes = {
 //   1: {
