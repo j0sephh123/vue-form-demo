@@ -13,8 +13,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import FirstStep from "./components/steps/FirstStep.vue";
-import SecondStep from "./components/steps/SecondStep.vue";
 import StepWrapper from "./components/steps/StepWrapper.vue";
 
 import Controls from "./components/generic/Controls.vue";
@@ -24,8 +22,6 @@ import FieldLabel from "./components/generic/FieldLabel.vue";
 export default {
   components: {
     FieldLabel,
-    FirstStep,
-    SecondStep,
     Controls,
     Item,
     StepWrapper,

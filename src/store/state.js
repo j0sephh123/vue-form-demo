@@ -3,10 +3,6 @@ import { validationStates } from "../constants";
 import MoviesList from "../components/generic/MoviesList.vue";
 import Datepicker from "../components/generic/Datepicker.vue";
 import Time from "../components/generic/Time.vue";
-import Tickets from "../components/generic/Tickets.vue";
-import Name from "../components/generic/Name.vue";
-import Phone from "../components/generic/Phone.vue";
-import Email from "../components/generic/Email.vue";
 import Summary from "../components/generic/Summary.vue";
 import Field from "../components/generic/Field.vue";
 
@@ -73,6 +69,7 @@ export const fields = {
     validityState: validationStates.neutral,
   },
   name: {
+    id: "name",
     type: "text",
     errorText: "Invalid name length",
     helperText: "Name must be between 2 and 255 characters",
@@ -80,6 +77,7 @@ export const fields = {
     validityState: validationStates.neutral,
   },
   phone: {
+    id: "phone",
     type: "tel",
     errorText: "Invalid phone",
     helperText:
@@ -88,6 +86,7 @@ export const fields = {
     validityState: validationStates.neutral,
   },
   email: {
+    id: "email",
     type: "email",
     errorText: "Please enter a valid email",
     helperText: "We will not share your email with anyone else",

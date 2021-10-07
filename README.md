@@ -51,3 +51,6 @@ Finding a good datepicker for vue3 seemed hard, I'm not fully satisfied with thi
 Really wanted to get into render functions, since I've never used them, but will leave that for other projects.
 Will skip `steps` and `summary` components so I can actually finish this.
 Validation is obviously the biggest flaw in the app. I don't like how it's done and that's it. Probably needed to use some library, but I'm not really familiar what's good for that. https://vee-validate.logaretm.com/v4/
+
+## Validation
+on clicking next, then do the validation, when the user starts typing on an error field, remove the error from it

@@ -10,9 +10,6 @@
         :value="details[currentProps.id]"
       />
     </div>
-    <!-- <p :class="['help', validityState === 'invalid' && 'is-danger']">
-      {{ helperText }}
-    </p> -->
     <p class="help">{{ currentProps.helperText }}</p>
   </div>
 </template>
