@@ -1,3 +1,6 @@
+## What is that
+Just a demo application using Vue, Vuex, Bulma
+
 ## How to start
 `npm i && npm run dev`  
 
@@ -20,8 +23,8 @@
 
 ## Flow
 In App.vue:
-- iterate through the state.steps to get an array of the current fields that we need to show based on which step are we
-- render specfic component for each field defined in state.components
+- iterate through the `state.steps` to get an array of the current fields that we need to show based on which step are we
+- render specfic component for each field defined in `state.components`
 **date** is using an external library for datepicker  
 **time** is a just a list of tags  
 **movie** - just a list of cards  
