@@ -1,9 +1,12 @@
 import { markRaw } from "vue";
-import MoviesList from "../components/generic/MoviesList.vue";
-import Datepicker from "../components/generic/Datepicker.vue";
-import Time from "../components/generic/Time.vue";
-import Summary from "../components/generic/Summary.vue";
-import Field from "../components/generic/Field.vue";
+import MoviesList from "../components/MoviesList.vue";
+import Datepicker from "../components/Datepicker.vue";
+import Time from "../components/Time.vue";
+import Summary from "../components/Summary.vue";
+import Field from "../components/Field.vue";
+
+export const movies = ["Lord of the Rings", "Star Wars"];
+export const times = ["14:00", "18:00", "22:30"];
 
 export const steps = {
   1: {
@@ -32,7 +35,6 @@ export const components = {
 };
 
 export const details = {
-  summary: "",
   time: "",
   movie: "",
   date: "",
@@ -47,22 +49,18 @@ export const fields = {
     selected: false,
     label: "Pick a movie",
     valid: true,
-    errorText: "Please select a movie",
   },
   time: {
     label: "Pick a time",
     valid: true,
-    errorText: "Please select a time",
   },
   date: {
     valid: true,
-    errorText: "Please enter a valid a date",
     label: "Date and time",
   },
   tickets: {
     id: "tickets",
     type: "number",
-    errorText: "Invalid number of tickets",
     helperText: "Pick between 1 and 20",
     label: "Number of tickets",
     valid: true,
@@ -70,7 +68,6 @@ export const fields = {
   name: {
     id: "name",
     type: "text",
-    errorText: "Invalid name length",
     helperText: "Name must be between 2 and 255 characters",
     label: "Name",
     valid: true,
@@ -78,7 +75,6 @@ export const fields = {
   phone: {
     id: "phone",
     type: "tel",
-    errorText: "Invalid phone",
     helperText:
       "We support only bulgarian numbers like 0889123456 or +359889123456",
     label: "Phone",
@@ -87,23 +83,24 @@ export const fields = {
   email: {
     id: "email",
     type: "email",
-    errorText: "Please enter a valid email",
-    helperText: "We will not share your email with anyone else",
+    helperText: "asd@gmail.com We will not share your email with anyone else",
     label: "Email",
     valid: true,
   },
   summary: {
     label: "Summary",
+    valid: true,
   },
 };
 
 export const state = () => {
   return {
     step: 1,
-    weekDay: null,
     components,
     steps,
-    details: { ...details },
-    fields: { ...fields },
+    details,
+    fields,
+    movies,
+    times,
   };
 };

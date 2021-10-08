@@ -1,5 +1,5 @@
 <template>
-  <div class="section columns">
+  <div class="columns">
     <movie
       :selected="movieItem === details.movie"
       :movie="movieItem"
@@ -11,7 +11,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { movies } from "../../constants";
 import Movie from "./Movie.vue";
 
 export default {
@@ -21,15 +20,10 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["details"]),
+    ...mapGetters(["details", "movies"]),
   },
   components: {
     Movie,
-  },
-  data() {
-    return {
-      movies,
-    };
   },
 };
 </script>

@@ -10,16 +10,14 @@
       </template>
     </step-wrapper>
     <controls />
-    <pre>{{ details }}</pre>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import StepWrapper from "./components/steps/StepWrapper.vue";
-
-import Controls from "./components/generic/Controls.vue";
-import FieldLabel from "./components/generic/FieldLabel.vue";
+import StepWrapper from "./components/StepWrapper.vue";
+import Controls from "./components/Controls.vue";
+import FieldLabel from "./components/FieldLabel.vue";
 
 export default {
   components: {
@@ -29,24 +27,13 @@ export default {
   },
   computed: {
     ...mapGetters([
-      "state",
       "step",
-      "values",
       "fields",
-      "steps",
       "firstStep",
-      "secondStep",
-      "availableSteps",
       "stepItems",
-      "components",
       "details",
+      "components",
     ]),
   },
-  mounted() {},
-  updated() {},
 };
 </script>
-
-
-
-DatePicker

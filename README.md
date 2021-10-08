@@ -1,56 +1,35 @@
 ## How to start
-`npm run dev`  
+`npm i && npm run dev`  
 
 ## Tech
 [Vue](https://v3.vuejs.org/)  
-[Vite](https://vitejs.dev/)  
-[Bulma](https://bulma.io/) - just for simplicity, css is not the main goal here.  
-[Vuex](https://next.vuex.vuejs.org)  
+[Vite](https://vitejs.dev/) - just like how quick it is  
+[Bulma](https://bulma.io/) - very simple and easy to use  
+[Vuex](https://next.vuex.vuejs.org) - always a pleasure to use it even though  just a fraction of its capabilities are used here
 
-[] Prepare  
-  [x] cleanup default stuff  
-  [x] add bulma to the project  
-  [x] add vuex
+## Project structure
+`state.steps` - controls which component are shown depending on the step  
+`state.details` - to keep input values  
+`state.fields` - 
+  - `label` and `helperText` are self-explanatory
+  - `type` is used to differentiate in `Field` component which input type to render
+  - `id` is used for helping save input value in `state.details`
+  - `valid` - boolean - if it is not valid, the text becomes red
 
-[] State
-  [x] add boilerplate
-  [x] extract in different folder
+`state.components` - so we can use `<component :is="">`
 
-[] Establish the needed components  
-  [x] `DatePicker` input type datepicker  
-    [x] `npm i vue3-date-time-picker` 
-    [x] @input connect to vuex
-    [x] @cleared cancel needs to reset date
+## Flow
+In App.vue:
+- iterate through the state.steps to get an array of the current fields that we need to show based on which step are we
+- render specfic component for each field defined in state.components
+**date** is using an external library for datepicker  
+**time** is a just a list of tags  
+**movie** - just a list of cards  
+**tickets**, **name**, **phone**, **email** - just inputs with different type  
 
-  [x] `Field`  
-    [x] tickets - input type number  
-    [x] name - input type text 
-    [x] phone - input type tel 
-    [x] email - input type email
-    [x] dynamic label  
-    [x] dynamic type  
-    [x] @input connect to vuex
-    [x] helperText functionality
-    [x] errorText functionality
-
-  [x] `MovieCard`
-    [x] add to state
-    [x] render multiple
-    [x] use card component from bulma
-    [x] selected active style  
-    [x] dynamic title
-
-  [x] `Summary` - display ticket summary  
-  [x] `Button` - move between steps/  submit  
-
+On input from the user, state.details is updated with just key,value pair.
+We check if the fields are valid only when the user clicks next, if they are not, we color the label in red. When the user starts typing/uses an invalid field, it becomes neutral once again. Validation is only triggered on clicking next.
+For the validation logic, on clicking next, we run a specific function for each field, nothing really interesting. You can check `utils.js` validator function. It generates an array with the invalid fields. If it is empty, go to the next step, if it isn't update the invalid fields.
 
 ## Comments
-Using bulma for css, it seems the quickest to get things done.  
-Vuex setup was pretty easy.  
-Finding a good datepicker for vue3 seemed hard, I'm not fully satisfied with this one, but I'm trying to be time effecient.  
-Really wanted to get into render functions, since I've never used them, but will leave that for other projects.
-Will skip `steps` and `summary` components so I can actually finish this.
-Validation is obviously the biggest flaw in the app. I don't like how it's done and that's it. Probably needed to use some library, but I'm not really familiar what's good for that. https://vee-validate.logaretm.com/v4/
-
-## Validation
-on clicking next, then do the validation, when the user starts typing on an error field, remove the error from it
+I've enjoyed working with Vue and will probably use it for a side project now.

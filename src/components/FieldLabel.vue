@@ -1,5 +1,5 @@
 <template>
-  <p class="['is-size-3']">{{ label }} {{ valid }}</p>
+  <p :class="['is-size-3', !valid && 'has-text-danger']">{{ label }}</p>
 </template>
 
 <script>

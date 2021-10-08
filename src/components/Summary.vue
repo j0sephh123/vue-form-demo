@@ -1,4 +1,4 @@
-<template><pre>{{ summary }}</pre>
+<template><pre>{{ details }}</pre>
 </template>
 
 <script>
@@ -6,7 +6,7 @@ import { mapGetters } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["summary"]),
+    ...mapGetters(["details"]),
   },
 };
 </script>

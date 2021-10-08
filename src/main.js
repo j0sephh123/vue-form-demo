@@ -3,6 +3,7 @@ import store from "./store";
 import App from "./App.vue";
 
 import "./bulma.sass";
+import './styles.sass'
 
 import "vue3-date-time-picker/dist/main.css";
 

@@ -1,15 +1,14 @@
-import Movie from "../components/generic/Movie.vue";
-import Datepicker from "../components/generic/Datepicker.vue";
-import Time from "../components/generic/Time.vue";
-import Summary from "../components/generic/Summary.vue";
-import Field from "../components/generic/Field.vue";
+import Movie from "../components/Movie.vue";
+import Datepicker from "../components/Datepicker.vue";
+import Time from "../components/Time.vue";
+import Summary from "../components/Summary.vue";
+import Field from "../components/Field.vue";
 
 export const getters = {
   step: ({ step }) => step,
-  values: ({ values }) => values,
   showNextBtn: ({ step }) => step !== 3,
+  showConfirmBtn: ({ step }) => step === 3,
   showPrevBtn: ({ step }) => step !== 1,
-  summary: ({ values }) => values,
   fields: ({ fields }) => fields,
   stepItems: ({ steps, step }) => steps[step]["items"],
   availableSteps: ({ steps }) => Object.keys(steps).length,
@@ -24,4 +23,6 @@ export const getters = {
   summary: () => Summary,
   details: ({ details }) => details,
   components: ({ components }) => components,
+  times: ({ times }) => times,
+  movies: ({ movies }) => movies,
 };

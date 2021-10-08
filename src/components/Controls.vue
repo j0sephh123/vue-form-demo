@@ -10,6 +10,11 @@
         Next
       </button>
     </div>
+    <div class="control">
+      <button v-if="showConfirmBtn" class="button is-link">
+        Confirm (nothing happens)
+      </button>
+    </div>
   </div>
 </template>
 
@@ -21,7 +26,7 @@ export default {
     ...mapMutations(["next", "previous"]),
   },
   computed: {
-    ...mapGetters(["showNextBtn", "showPrevBtn"]),
+    ...mapGetters(["showNextBtn", "showPrevBtn", "showConfirmBtn"]),
   },
 };
 </script>
